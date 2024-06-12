@@ -2,15 +2,12 @@ package Tests;
 
 import Base.TestBase;
 import LoadProperties.LoadPropertiesFile;
-import Pages.CartPage;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 
 public class AutomationTaskTest extends TestBase {
 
-    private WebDriver driver;
 
     String email = LoadPropertiesFile.userdata.getProperty("email");
     String firstname = LoadPropertiesFile.userdata.getProperty("firstname");
@@ -34,14 +31,14 @@ public class AutomationTaskTest extends TestBase {
     public void RegisterNewUser() throws InterruptedException {
         homePage = registrationPage.UserRegistration(firstname, lastname, password);
     }
-
     @Test(priority = 4)
     public void SearchForBlouses() {
-        String expectedText = "Your account has been created.";
-        Assert.assertTrue("Element does not contain the expected text",
-                homePage.getSuccessAlertText().contains(expectedText));
-        productPage = homePage.ClickOnWomenCategory();
+    String expectedText = "Your account has been created.";
+    Assert.assertTrue("Element does not contain the expected text",
+            homePage.getSuccessAlertText().contains(expectedText));
+    productPage = homePage.ClickOnWomenCategory();
     }
+
 
     @Test(priority = 5)
     public void ClickOnBlouseLink() {
@@ -89,7 +86,7 @@ public class AutomationTaskTest extends TestBase {
     @Test(priority = 13)
     public void OrderHistoryPageTest(){
         orderHistoryRef = orderHistoryPage.getOrderReference();
-        Assert.assertEquals("Order not found", orderConfirmationRef, orderHistoryRef);
+        Assert.assertEquals("Order not created", orderConfirmationRef, orderHistoryRef);
     }
 
 

@@ -2,9 +2,10 @@
 <suite name="MyShop Test Suite">
     <test name="MyShop Tests">
         <classes>
-            <class name="Tests.SignInTest"/>
-            <class name="Tests.RegistrationTest"/>
-            <class name="Tests.SearchTest"/>
+            <class name="Tests.AccountCreationTest"/>
+            <class name="Tests.ClickOnBlouseTest"/>
+            <class name="Tests.AddToCartTest"/>
+            <class name="Tests.CheckoutProcedureTest"/>
         </classes>
     </test>
 </suite>
