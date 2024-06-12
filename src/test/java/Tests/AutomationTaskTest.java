@@ -37,6 +37,13 @@ public class AutomationTaskTest extends TestBase {
         String expectedText = "Your account has been created.";
         Assert.assertTrue("Element does not contain the expected text",
                 homePage.getSuccessAlertText().contains(expectedText));
-        homePage.ClickOnWomenCategory();
+        productPage =  homePage.ClickOnWomenCategory();
+    }
+    @Test(priority = 5)
+    public void ClickOnBlouseLink(){
+        productPage.ClickOnBlouse();
+        productPage.ChooseSize();
+        productPage.AddToCart();
+        productPage.ProceedToCheckout();
     }
 }

@@ -1,7 +1,7 @@
 package Base;
 
 import Pages.*;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,6 +21,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
     protected SignInPage signInPage;
     protected RegistrationPage registrationPage;
     protected HomePage homePage;
+    protected ProductPage productPage;
 
 
     public static ChromeOptions chromeOption() {
@@ -34,11 +35,9 @@ public class TestBase extends AbstractTestNGCucumberTests {
     }
 
     @BeforeSuite
-    // @Parameters({"browser"})
     public void SetUpEnvironment() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/Drivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--incognito");
         options.addArguments("--window-size=1024,768");
         driver = new ChromeDriver(options);
         driver.navigate().to("http://www.automationpractice.pl/index.php");
