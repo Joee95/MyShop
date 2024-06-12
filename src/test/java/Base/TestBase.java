@@ -54,9 +54,9 @@ public class TestBase extends AbstractTestNGCucumberTests {
     }
 
 
- /*   @AfterSuite
+    @AfterSuite
     public void CloseDriver (){
         driver.quit();
     }
-    */
+
 }
