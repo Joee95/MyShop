@@ -30,7 +30,8 @@ public void ChooseSize(){
 public void AddToCart(){
     driver.findElement(AddToCartBtn).click();
 }
-public void ProceedToCheckout (){
+public CartPage ProceedToCheckout (){
     driver.findElement(ProceedToCheckOut).click();
+return new CartPage(driver);
 }
 }
