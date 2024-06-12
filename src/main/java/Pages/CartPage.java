@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class CartPage {
     public WebDriver driver;
 
-    private By ProceedToCheckOut = By.xpath("//body[@id='order']");
+    private By ProceedToCheckOut = By.linkText("Proceed to checkout");
 
     public CartPage (WebDriver driver){
         this.driver = driver;

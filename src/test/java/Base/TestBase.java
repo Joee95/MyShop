@@ -22,7 +22,14 @@ public class TestBase extends AbstractTestNGCucumberTests {
     protected RegistrationPage registrationPage;
     protected HomePage homePage;
     protected ProductPage productPage;
-
+    protected CartPage cartPage;
+    protected AddressPage addressPage;
+    protected AddressesPage addressesPage;
+    protected ShippingPage shippingPage;
+    protected PaymentPage paymentPage;
+    protected OrderSummaryPage orderSummaryPage;
+    protected OrderConfirmationPage orderConfirmationPage;
+    protected OrderHistoryPage orderHistoryPage;
 
     public static ChromeOptions chromeOption() {
         options = new ChromeOptions();

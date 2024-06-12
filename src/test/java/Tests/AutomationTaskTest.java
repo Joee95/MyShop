@@ -2,6 +2,7 @@ package Tests;
 
 import Base.TestBase;
 import LoadProperties.LoadPropertiesFile;
+import Pages.CartPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
@@ -16,6 +17,8 @@ public class AutomationTaskTest extends TestBase {
     String lastname = LoadPropertiesFile.userdata.getProperty("lastname");
     String password = LoadPropertiesFile.userdata.getProperty("password");
 
+    private String orderConfirmationRef;
+    private String orderHistoryRef;
 
     @Test(priority = 1)
     public void ClickOnSignInButton() throws InterruptedException {
@@ -37,13 +40,57 @@ public class AutomationTaskTest extends TestBase {
         String expectedText = "Your account has been created.";
         Assert.assertTrue("Element does not contain the expected text",
                 homePage.getSuccessAlertText().contains(expectedText));
-        productPage =  homePage.ClickOnWomenCategory();
+        productPage = homePage.ClickOnWomenCategory();
     }
+
     @Test(priority = 5)
-    public void ClickOnBlouseLink(){
+    public void ClickOnBlouseLink() {
         productPage.ClickOnBlouse();
         productPage.ChooseSize();
         productPage.AddToCart();
-        productPage.ProceedToCheckout();
+        cartPage = productPage.ProceedToCheckout();
     }
+
+    @Test(priority = 6)
+    public void ProceedCartPage() {
+        addressPage = cartPage.ClickOnProceed();
+    }
+
+    @Test(priority = 7)
+    public void AddressPageTest() {
+        addressesPage = addressPage.AddressPageFields();
+    }
+
+    @Test(priority = 8)
+    public void AddressesPageTest() {
+        shippingPage = addressesPage.ClickOnProceedBtn();
+    }
+
+    @Test(priority = 9)
+    public void ShippingPageTest() {
+        paymentPage = shippingPage.AgreeClick();
+    }
+
+    @Test(priority = 10)
+    public void PaymentPageTest() {
+        orderSummaryPage = paymentPage.PressOnBankWireBtn();
+    }
+
+    @Test(priority = 11)
+    public void OrderSummaryPageTest() {
+        orderConfirmationPage = orderSummaryPage.ClickOnConfirm();
+    }
+
+    @Test(priority = 12)
+    public void OrderConfirmationPageTest(){
+        orderConfirmationRef = orderConfirmationPage.getOrderReferenceNumber();
+     orderHistoryPage =  orderConfirmationPage.ClickOnOrderHistory();
+    }
+    @Test(priority = 13)
+    public void OrderHistoryPageTest(){
+        orderHistoryRef = orderHistoryPage.getOrderReference();
+        Assert.assertEquals("Order not found", orderConfirmationRef, orderHistoryRef);
+    }
+
+
 }
