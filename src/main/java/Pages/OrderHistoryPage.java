@@ -11,7 +11,7 @@ public class OrderHistoryPage {
     protected By orderReference = By.cssSelector("table#order-list tbody tr:first-child td.history_link a");
 
 
-    public OrderHistoryPage(WebDriver driver){
+    public OrderHistoryPage(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -20,11 +20,12 @@ public class HomePage {
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
+
     public String getSuccessAlertText() {
         return driver.findElement(SuccessAlert).getText();
     }
 
-    public ProductPage ClickOnWomenCategory () {
+    public ProductPage ClickOnWomenCategory() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(SuccessAlert)));
         System.out.println(driver.findElement(SuccessAlert).getText());

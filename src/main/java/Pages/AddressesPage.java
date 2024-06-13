@@ -15,11 +15,12 @@ public class AddressesPage {
     public AddressesPage(WebDriver driver) {
         this.driver = driver;
     }
-    public ShippingPage ClickOnProceedBtn(){
 
-        WebDriverWait wait = new WebDriverWait(driver , Duration.ofSeconds(1000));
+    public ShippingPage ClickOnProceedBtn() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         driver.findElement(ProceedBtn).click();
-return new ShippingPage(driver);
+        return new ShippingPage(driver);
     }
 
 }

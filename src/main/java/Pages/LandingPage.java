@@ -14,7 +14,7 @@ public class LandingPage {
         this.driver = driver;
     }
 
-    public SignInPage ClickOnSignInBtn () throws InterruptedException {
+    public SignInPage ClickOnSignInBtn() throws InterruptedException {
         driver.findElement(SignIn).click();
         Thread.sleep(1000);
         return new SignInPage(driver);

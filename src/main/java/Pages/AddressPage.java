@@ -26,18 +26,18 @@ public class AddressPage {
         this.driver = driver;
     }
 
-    public AddressesPage AddressPageFields() {
+    public AddressesPage AddressPageFields(String address , String city , String postalcode , String homephone , String mobilephone , String addresstitle) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
-        driver.findElement(Address).sendKeys("47 El Hegaz st");
-        driver.findElement(City).sendKeys("Cairo");
+        driver.findElement(Address).sendKeys(address);
+        driver.findElement(City).sendKeys(city);
         select = new Select(driver.findElement(State));
         select.selectByVisibleText("California");
-        driver.findElement(PostalCode).sendKeys("12345");
+        driver.findElement(PostalCode).sendKeys(postalcode);
         select = new Select(driver.findElement(Country));
         select.selectByValue("21");
-        driver.findElement(HomePhone).sendKeys("29855538");
-        driver.findElement(MobilePhone).sendKeys("01090871755");
-        driver.findElement(AddressTitle).sendKeys("EBC Building");
+        driver.findElement(HomePhone).sendKeys(homephone);
+        driver.findElement(MobilePhone).sendKeys(mobilephone);
+        driver.findElement(AddressTitle).sendKeys(addresstitle);
         driver.findElement(SaveBtn).click();
         return new AddressesPage(driver);
     }

@@ -8,13 +8,13 @@ public class CartPage {
 
     private By ProceedToCheckOut = By.linkText("Proceed to checkout");
 
-    public CartPage (WebDriver driver){
+    public CartPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public AddressPage ClickOnProceed (){
-    driver.findElement(ProceedToCheckOut).click();
-    return new AddressPage(driver);
+    public AddressPage ClickOnProceed() {
+        driver.findElement(ProceedToCheckOut).click();
+        return new AddressPage(driver);
     }
 }
 

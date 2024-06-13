@@ -20,10 +20,8 @@ public class OrderConfirmationPage {
     }
 
     public String getOrderReferenceNumber() {
-        // Locate the <div> element containing the text with the order reference number
         WebElement boxElement = driver.findElement(orderReferenceDiv);
 
-        // Extract the text content of the element
         String fullText = boxElement.getText();
 
         String orderRef = fullText.split("order reference")[1].split(" in")[0].trim();
@@ -32,6 +30,6 @@ public class OrderConfirmationPage {
 
     public OrderHistoryPage ClickOnOrderHistory() {
         driver.findElement(OrderHistoryBtn).click();
-    return new OrderHistoryPage(driver);
+        return new OrderHistoryPage(driver);
     }
 }

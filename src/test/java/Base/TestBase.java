@@ -13,23 +13,23 @@ import java.util.HashMap;
 
 public class TestBase extends AbstractTestNGCucumberTests {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected static ChromeOptions options;
     public static String downloadPath = System.getProperty("user.dir") + "\\Downloads\\EncryptedFile";
 
-    protected LandingPage landingPage;
-    protected SignInPage signInPage;
-    protected RegistrationPage registrationPage;
-    protected HomePage homePage;
-    protected ProductPage productPage;
-    protected CartPage cartPage;
-    protected AddressPage addressPage;
-    protected AddressesPage addressesPage;
-    protected ShippingPage shippingPage;
-    protected PaymentPage paymentPage;
-    protected OrderSummaryPage orderSummaryPage;
-    protected OrderConfirmationPage orderConfirmationPage;
-    protected OrderHistoryPage orderHistoryPage;
+    protected static LandingPage landingPage;
+    protected static SignInPage signInPage;
+    protected static RegistrationPage registrationPage;
+    protected static  HomePage homePage;
+    protected static ProductPage productPage;
+    protected static CartPage cartPage;
+    protected static AddressPage addressPage;
+    protected static AddressesPage addressesPage;
+    protected static ShippingPage shippingPage;
+    protected static PaymentPage paymentPage;
+    protected static OrderSummaryPage orderSummaryPage;
+    protected static OrderConfirmationPage orderConfirmationPage;
+    protected static OrderHistoryPage orderHistoryPage;
 
     public static ChromeOptions chromeOption() {
         options = new ChromeOptions();

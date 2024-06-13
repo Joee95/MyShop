@@ -29,7 +29,7 @@ public class SignInPage {
     }
 
     public RegistrationPage ClickOnCreateNewUserBtn(String email, String firstname, String lastname, String password) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver , Duration.ofSeconds(1000));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(EmailField)));
         driver.findElement(EmailField).sendKeys(email);
         driver.findElement(CreateNewUserBtn).click();
