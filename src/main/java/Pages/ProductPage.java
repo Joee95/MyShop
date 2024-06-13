@@ -34,6 +34,7 @@ public class ProductPage {
     }
 
     public void AddToCart() {
+        driver.navigate().refresh();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(AddToCartBtn));
         button.click();
