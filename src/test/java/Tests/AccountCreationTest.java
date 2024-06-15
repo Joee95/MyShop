@@ -16,7 +16,7 @@ public class AccountCreationTest extends TestBase {
     String password = LoadPropertiesFile.userdata.getProperty("password");
 
     @Test(priority = 1)
-    public void ClickOnSignInButton() throws InterruptedException {
+    public void ClickOnSignInButton() {
         signInPage = landingPage.ClickOnSignInBtn();
     }
 
