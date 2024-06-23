@@ -17,17 +17,17 @@ public class AccountCreationTest extends TestBase {
 
     @Test(priority = 1)
     public void ClickOnSignInButton() {
-        signInPage = landingPage.ClickOnSignInBtn();
+        signInPage = landingPage.clickOnSignInBtn();
     }
 
     @Test(priority = 2)
     public void ClickOnCreateNewUser() throws InterruptedException {
-        registrationPage = signInPage.ClickOnCreateNewUserBtn(email, firstname, lastname, password);
+        registrationPage = signInPage.clickOnCreateNewUserBtn(email, firstname, lastname, password);
     }
 
     @Test(priority = 3)
     public void RegisterNewUser() throws InterruptedException {
-        homePage = registrationPage.UserRegistration(firstname, lastname, password);
+        homePage = registrationPage.userRegistration(firstname, lastname, password);
     }
 
     @Test(priority = 4)
@@ -35,6 +35,6 @@ public class AccountCreationTest extends TestBase {
         String expectedText = "Your account has been created.";
         Assert.assertTrue("Element does not contain the expected text",
                 homePage.getSuccessAlertText().contains(expectedText));
-        productPage = homePage.ClickOnWomenCategory();
+        productPage = homePage.clickOnWomenCategory();
     }
 }

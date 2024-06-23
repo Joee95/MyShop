@@ -15,7 +15,7 @@ public class OrderSummaryPage {
         this.driver = driver;
     }
 
-    public OrderConfirmationPage ClickOnConfirm() {
+    public OrderConfirmationPage clickOnConfirm() {
         driver.findElement(ConfirmBtn).click();
         return new OrderConfirmationPage(driver);
     }

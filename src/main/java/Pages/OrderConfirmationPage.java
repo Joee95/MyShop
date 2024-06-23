@@ -28,7 +28,7 @@ public class OrderConfirmationPage {
         return orderRef;
     }
 
-    public OrderHistoryPage ClickOnOrderHistory() {
+    public OrderHistoryPage clickOnOrderHistory() {
         driver.findElement(OrderHistoryBtn).click();
         return new OrderHistoryPage(driver);
     }

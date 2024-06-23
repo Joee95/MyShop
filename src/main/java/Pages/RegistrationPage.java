@@ -29,7 +29,7 @@ public class RegistrationPage {
         this.driver = driver;
     }
 
-    public HomePage UserRegistration(String firstname, String lastname, String password) throws InterruptedException {
+    public HomePage userRegistration(String firstname, String lastname, String password) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(Gender)));
         driver.findElement(Gender).click();

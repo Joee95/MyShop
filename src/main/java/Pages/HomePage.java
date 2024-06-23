@@ -25,7 +25,7 @@ public class HomePage {
         return driver.findElement(SuccessAlert).getText();
     }
 
-    public ProductPage ClickOnWomenCategory() {
+    public ProductPage clickOnWomenCategory() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(SuccessAlert)));
         System.out.println(driver.findElement(SuccessAlert).getText());

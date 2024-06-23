@@ -14,7 +14,7 @@ public class ShippingPage {
         this.driver = driver;
     }
 
-    public PaymentPage AgreeClick() {
+    public PaymentPage agreeClick() {
         driver.findElement(AgreeBtn).click();
         driver.findElement(ProceedBtn).click();
         return new PaymentPage(driver);

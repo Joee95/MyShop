@@ -7,14 +7,14 @@ public class PaymentPage {
 
     public WebDriver driver;
 
-    protected By PayByBankWireBtn = By.xpath("//a[@title='Pay by bank wire']");
+    protected By payByBankWireBtn = By.xpath("//a[@title='Pay by bank wire']");
 
     public PaymentPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public OrderSummaryPage PressOnBankWireBtn() {
-        driver.findElement(PayByBankWireBtn).click();
+    public OrderSummaryPage pressOnBankWireBtn() {
+        driver.findElement(payByBankWireBtn).click();
         return new OrderSummaryPage(driver);
     }
 }

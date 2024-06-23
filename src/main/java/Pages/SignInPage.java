@@ -28,7 +28,7 @@ public class SignInPage {
         this.driver = driver;
     }
 
-    public RegistrationPage ClickOnCreateNewUserBtn(String email, String firstname, String lastname, String password) throws InterruptedException {
+    public RegistrationPage clickOnCreateNewUserBtn(String email, String firstname, String lastname, String password) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(EmailField)));
         driver.findElement(EmailField).sendKeys(email);

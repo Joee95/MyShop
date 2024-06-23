@@ -12,7 +12,7 @@ public class CartPage {
         this.driver = driver;
     }
 
-    public AddressPage ClickOnProceed() {
+    public AddressPage clickOnProceed() {
         driver.findElement(ProceedToCheckOut).click();
         return new AddressPage(driver);
     }

@@ -14,7 +14,7 @@ public class LandingPage {
         this.driver = driver;
     }
 
-    public SignInPage ClickOnSignInBtn() {
+    public SignInPage clickOnSignInBtn() {
         driver.findElement(SignIn).click();
         return new SignInPage(driver);
     }

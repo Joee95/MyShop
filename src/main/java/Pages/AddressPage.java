@@ -26,7 +26,7 @@ public class AddressPage {
         this.driver = driver;
     }
 
-    public AddressesPage AddressPageFields(String address , String city , String postalcode , String homephone , String mobilephone , String addresstitle) {
+    public AddressesPage addressPageFields(String address , String city , String postalcode , String homephone , String mobilephone , String addresstitle) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         driver.findElement(Address).sendKeys(address);
         driver.findElement(City).sendKeys(city);

@@ -2,9 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class AddressesPage {
 
@@ -18,7 +15,6 @@ public class AddressesPage {
 
     public ShippingPage ClickOnProceedBtn() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         driver.findElement(ProceedBtn).click();
         return new ShippingPage(driver);
     }

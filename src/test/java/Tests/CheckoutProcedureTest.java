@@ -19,7 +19,7 @@ public class CheckoutProcedureTest extends TestBase {
 
     @Test(priority = 7)
     public void AddressPageTest() {
-        addressesPage = addressPage.AddressPageFields(address , city , postalcode , homephone , mobilephone , addresstitle);
+        addressesPage = addressPage.addressPageFields(address , city , postalcode , homephone , mobilephone , addresstitle);
     }
 
     @Test(priority = 8)
@@ -29,23 +29,23 @@ public class CheckoutProcedureTest extends TestBase {
 
     @Test(priority = 9)
     public void ShippingPageTest() {
-        paymentPage = shippingPage.AgreeClick();
+        paymentPage = shippingPage.agreeClick();
     }
 
     @Test(priority = 10)
     public void PaymentPageTest() {
-        orderSummaryPage = paymentPage.PressOnBankWireBtn();
+        orderSummaryPage = paymentPage.pressOnBankWireBtn();
     }
 
     @Test(priority = 11)
     public void OrderSummaryPageTest() {
-        orderConfirmationPage = orderSummaryPage.ClickOnConfirm();
+        orderConfirmationPage = orderSummaryPage.clickOnConfirm();
     }
 
     @Test(priority = 12)
     public void OrderConfirmationPageTest() {
         orderConfirmationRef = orderConfirmationPage.getOrderReferenceNumber();
-        orderHistoryPage = orderConfirmationPage.ClickOnOrderHistory();
+        orderHistoryPage = orderConfirmationPage.clickOnOrderHistory();
     }
 
     @Test(priority = 13)
