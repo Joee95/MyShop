@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 import java.time.Duration;
 import java.util.HashMap;
 
-public class TestBase extends AbstractTestNGCucumberTests {
+public class BaseTest extends AbstractTestNGCucumberTests {
 
     protected static WebDriver driver;
     protected static ChromeOptions options;

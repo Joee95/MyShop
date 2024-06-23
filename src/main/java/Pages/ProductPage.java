@@ -18,47 +18,28 @@ public class ProductPage {
     private static final By SIZE_LIST = By.xpath("//select[@name=\"group_1\"]");
     private static final By ADD_TO_CART_BTN = By.xpath("//span[text()='Add to cart']");
     private static final By PROCEED_TO_CHECKOUT = By.xpath("//a[@class=\"btn btn-default button button-medium\"]");
-    private static final int TIMEOUT_SECONDS = 10;
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_SECONDS));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void clickOnBlouse() {
-        try {
-            driver.findElement(BLOUSE_LINK).click();
-        } catch (Exception e) {
-            System.out.println("Failed to click on Blouse link: " + e.getMessage());
-        }
+        driver.findElement(BLOUSE_LINK).click();
     }
 
     public void chooseSize() {
-        try {
-            select = new Select(driver.findElement(SIZE_LIST));
-            select.selectByValue("2");
-        } catch (Exception e) {
-            System.out.println("Failed to select size: " + e.getMessage());
-        }
+        select = new Select(driver.findElement(SIZE_LIST));
+        select.selectByValue("2");
     }
 
     public void addToCart() {
-        try {
-            driver.navigate().refresh();
-            WebElement button = wait.until(ExpectedConditions.elementToBeClickable(ADD_TO_CART_BTN));
-            button.click();
-        } catch (Exception e) {
-            System.out.println("Failed to add to cart: " + e.getMessage());
-        }
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(ADD_TO_CART_BTN));
+        button.click();
     }
 
     public CartPage proceedToCheckout() {
-        try {
-            driver.findElement(PROCEED_TO_CHECKOUT).click();
-            return new CartPage(driver);
-        } catch (Exception e) {
-            System.out.println("Failed to proceed to checkout: " + e.getMessage());
-            return null;
-        }
+        driver.findElement(PROCEED_TO_CHECKOUT).click();
+        return new CartPage(driver);
     }
 }

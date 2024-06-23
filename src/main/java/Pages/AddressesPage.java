@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class AddressesPage {
 
     public WebDriver driver;
-
     private By ProceedBtn = By.xpath("//button[@name='processAddress' and @class='button btn btn-default button-medium']");
 
     public AddressesPage(WebDriver driver) {
@@ -14,9 +13,7 @@ public class AddressesPage {
     }
 
     public ShippingPage ClickOnProceedBtn() {
-
         driver.findElement(ProceedBtn).click();
         return new ShippingPage(driver);
     }
-
 }

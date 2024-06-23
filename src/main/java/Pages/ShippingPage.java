@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class ShippingPage {
 
     public WebDriver driver;
-
     protected By AgreeBtn = By.xpath("//input[@id=\"cgv\"]");
     protected By ProceedBtn = By.xpath("//button[@name='processCarrier' and @class='button btn btn-default standard-checkout button-medium']");
 
@@ -19,5 +18,4 @@ public class ShippingPage {
         driver.findElement(ProceedBtn).click();
         return new PaymentPage(driver);
     }
-
 }

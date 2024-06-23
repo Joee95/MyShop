@@ -17,4 +17,3 @@ public class CartPage {
         return new AddressPage(driver);
     }
 }
-

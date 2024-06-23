@@ -1,14 +1,11 @@
 package Tests;
 
-import Base.TestBase;
+import Base.BaseTest;
 import LoadProperties.LoadPropertiesFile;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AccountCreationTest extends TestBase {
-
-    private WebDriver driver;
+public class AccountCreationTest extends BaseTest {
 
     String email = LoadPropertiesFile.userdata.getProperty("email");
     String firstname = LoadPropertiesFile.userdata.getProperty("firstname");
@@ -16,25 +13,25 @@ public class AccountCreationTest extends TestBase {
     String password = LoadPropertiesFile.userdata.getProperty("password");
 
     @Test(priority = 1)
-    public void ClickOnSignInButton() {
+    public void clickOnSignInButton() {
         signInPage = landingPage.clickOnSignInBtn();
     }
 
     @Test(priority = 2)
-    public void ClickOnCreateNewUser() throws InterruptedException {
+    public void clickOnCreateNewUser() throws InterruptedException {
         registrationPage = signInPage.clickOnCreateNewUserBtn(email, firstname, lastname, password);
     }
 
     @Test(priority = 3)
-    public void RegisterNewUser() throws InterruptedException {
+    public void registerNewUser() throws InterruptedException {
         homePage = registrationPage.userRegistration(firstname, lastname, password);
+        String expectedText = "Your account has been created.";
+        Assert.assertTrue(homePage.getSuccessAlertText().contains(expectedText), "Account creation failed!");
     }
 
     @Test(priority = 4)
-    public void accountCreationTest() {
-        String expectedText = "Your account has been created.";
-        Assert.assertTrue("Element does not contain the expected text",
-                homePage.getSuccessAlertText().contains(expectedText));
+    public void verifyNavigationToWomenCategory() {
         productPage = homePage.clickOnWomenCategory();
+        Assert.assertNotNull(productPage, "Navigation to Women Category failed!");
     }
 }
