@@ -15,7 +15,6 @@ public class OrderHistoryPage {
         this.driver = driver;
     }
 
-    // Method to get the first order reference number from the table
     public String getOrderReference() {
         WebElement referenceLink = driver.findElement(orderReference);
         String orderHistoryPageRef = referenceLink.getText();
