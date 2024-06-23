@@ -22,17 +22,17 @@ public class AddressPage {
         this.driver = driver;
     }
 
-    public AddressesPage addressPageFields(String address , String city , String postalcode , String homephone , String mobilephone , String addresstitle) {
+    public AddressesPage addressPageFields(String address , String city , String postalCode , String homePhone , String mobilePhone , String addressTitle) {
         driver.findElement(Address).sendKeys(address);
         driver.findElement(City).sendKeys(city);
         select = new Select(driver.findElement(State));
         select.selectByVisibleText("California");
-        driver.findElement(PostalCode).sendKeys(postalcode);
+        driver.findElement(PostalCode).sendKeys(postalCode);
         select = new Select(driver.findElement(Country));
         select.selectByValue("21");
-        driver.findElement(HomePhone).sendKeys(homephone);
-        driver.findElement(MobilePhone).sendKeys(mobilephone);
-        driver.findElement(AddressTitle).sendKeys(addresstitle);
+        driver.findElement(HomePhone).sendKeys(homePhone);
+        driver.findElement(MobilePhone).sendKeys(mobilePhone);
+        driver.findElement(AddressTitle).sendKeys(addressTitle);
         driver.findElement(SaveBtn).click();
         return new AddressesPage(driver);
     }
