@@ -17,7 +17,6 @@ public class OrderHistoryPage {
 
     public String getOrderReference() {
         WebElement referenceLink = driver.findElement(orderReference);
-        String orderHistoryPageRef = referenceLink.getText();
         return referenceLink.getText();
     }
 }
